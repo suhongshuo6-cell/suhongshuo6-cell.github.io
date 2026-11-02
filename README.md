@@ -28,8 +28,11 @@ git push origin main
 
 - `dist/index.html`：页面结构与个人介绍。
 - `dist/styles.css`：桌面、手机样式和减少动态效果支持。
+- `dist/personal.css`：姓名首屏、个人介绍、公开项目与联系入口。
 - `dist/app.js`：方向详情、产品思考文章、移动导航。
 
-姓名与职业来自用户提供的信息。介绍、方向与产品思考为初版拟稿，未添加未经提供的任职、项目业绩、联系方式或客户评价。上线给公众阅读前可按真实经历补充修改。
+姓名与职业来自用户提供的信息。个人介绍、关注方向与产品思考为网站拟稿，未添加未经提供的任职、项目业绩、联系方式或客户评价。工作经历和项目中的具体职责可按本人提供的信息补充。
+
+Claude Shield 案例依据 [公开仓库及 README](https://github.com/suhongshuo6-cell/claude-shield) 整理；`dist/claude-shield.png` 来自该仓库的 `docs/images/connection-verified.png`。截图包含隔离演示数据，页面保留相应说明及项目功能边界链接。案例没有推断个人职责、用户规模或项目成效。公开个人主页为 [suhongshuo6-cell](https://github.com/suhongshuo6-cell)。
 
 Google Fonts 是可选字体增强，加载失败时自动使用系统中文字体。站点代码不收集访问者信息，也不含需要后端的表单；托管平台和字体服务可能处理访问请求信息。
