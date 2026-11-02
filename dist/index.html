@@ -3,78 +3,395 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#090909">
-  <meta name="description" content="苏虹硕，AI 产品经理。个人介绍、公开项目与产品思考。">
+  <meta name="theme-color" content="#e5e5e5">
+  <meta name="description" content="苏虹硕，AI 产品经理。关注 AI 能力如何变成真实可用的产品——作品、方法与产品手记。">
   <meta property="og:title" content="苏虹硕 · AI 产品经理">
-  <meta property="og:description" content="认识苏虹硕：AI 产品经理，分享公开项目与产品思考。">
+  <meta property="og:description" content="让想法，在真实世界发生。苏虹硕的作品、方法与产品手记。">
   <title>苏虹硕 · AI 产品经理</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400..600&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700;900&display=swap">
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="personal.css">
-  <script src="app.js" defer></script>
+  <script>document.documentElement.classList.add('js')</script>
+  <script src="main.js" defer></script>
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.min.js","three/addons/":"./vendor/addons/"}}</script>
+  <script type="module" src="hero3d.js"></script>
 </head>
 <body>
-<a class="skip-link" href="#main">跳转至主要内容</a>
-<header class="header">
-  <a class="brand" href="#home" aria-label="苏虹硕 首页"><span class="brand-mark" aria-hidden="true">s<span>.</span></span><span>苏虹硕 <small>AI PRODUCT MANAGER</small></span></a>
-  <button class="menu-toggle" aria-expanded="false" aria-controls="navigation" aria-label="打开导航"><span></span><span></span></button>
-  <nav id="navigation" aria-label="主导航"><a class="active" href="#home">首页</a><a href="#about">关于我</a><a href="#projects">项目实践</a><a href="#thinking">产品思考</a><a class="nav-about" href="#contact">找到我 <span aria-hidden="true">↗</span></a></nav>
+<a class="skip" href="#main">跳到主要内容</a>
+
+<header class="nav" data-nav>
+  <a class="logo" href="#top" aria-label="苏虹硕 · 回到顶部">
+    <span class="logo-mark" aria-hidden="true">苏</span>
+    <span class="logo-text">SU HONGSHUO<small>AI PRODUCT MANAGER</small></span>
+  </a>
+  <nav class="pill" aria-label="主导航">
+    <span class="pill-indicator" aria-hidden="true"></span>
+    <a href="#about">关于</a>
+    <a href="#focus">方向</a>
+    <a href="#method">方法</a>
+    <a href="#work">作品</a>
+    <a href="#notes">手记</a>
+    <a href="#now">此刻</a>
+  </nav>
+  <a class="btn btn-dark nav-cta" href="#contact">联系我 <span class="arrow" aria-hidden="true">↗</span></a>
+  <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="打开导航"><span></span><span></span></button>
 </header>
+
+<div class="mobile-menu" id="mobile-menu" hidden>
+  <nav aria-label="移动端导航">
+    <a href="#about"><small>01</small>关于</a>
+    <a href="#focus"><small>02</small>方向</a>
+    <a href="#method"><small>03</small>方法</a>
+    <a href="#work"><small>04</small>作品</a>
+    <a href="#notes"><small>05</small>手记</a>
+    <a href="#now"><small>06</small>此刻</a>
+    <a href="#contact"><small>07</small>联系</a>
+  </nav>
+  <p class="mono">SU HONGSHUO — AI PRODUCT MANAGER</p>
+</div>
+
 <main id="main">
-  <section class="hero personal-hero" id="home">
-    <div class="hero-sky" aria-hidden="true"></div>
-    <div class="hero-inner container">
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <p class="hero-vertical mono" aria-hidden="true">苏虹硕 — 个人档案 — 2026</p>
+    <div class="container hero-grid">
       <div class="hero-copy">
-        <p class="eyebrow"><span class="spark">✳</span> SU HONGSHUO <span class="eyebrow-line"></span> 个人网站</p>
-        <p class="hero-intro">很高兴，在这里遇见你。</p>
-        <h1 class="hero-signature"><span class="signature-name">苏虹硕</span><span class="display-serif">Make ideas</span><span class="display-cn">让想法，</span><span class="display-cn">在真实世界<span class="display-italic">发生。</span></span></h1>
-        <p class="personal-role">AI 产品经理<span>AI PRODUCT MANAGER</span></p>
-        <p class="hero-description">这里收录我的公开项目和产品思考。<br>关于我在关注什么、尝试什么，以及正在做什么。</p>
-        <div class="hero-actions"><a class="button primary" href="#projects">看看我的项目 <span aria-hidden="true">↗</span></a><a class="hero-link" href="#about">更多关于我 <span aria-hidden="true">↓</span></a></div>
-        <a class="hero-github" href="https://github.com/suhongshuo6-cell" target="_blank" rel="noopener noreferrer"><span>GITHUB</span> @suhongshuo6-cell <span aria-hidden="true">↗</span></a>
+        <p class="hero-index mono"><span class="dot-volt" aria-hidden="true"></span>(001) PERSONAL INDEX — 想法 · 原型 · 产品</p>
+        <h1 class="display hero-title" aria-label="Su Hongshuo 苏虹硕">
+          <span class="line" aria-hidden="true"><span>SU HONG</span></span>
+          <span class="line" aria-hidden="true"><span>SHUO<i class="period"></i></span></span>
+        </h1>
+        <div class="hero-role" data-hero-fade>
+          <span class="tag tag-mint">AI PRODUCT MANAGER</span>
+          <span class="mono">苏虹硕 / SU HONGSHUO</span>
+        </div>
+        <p class="hero-lead" data-hero-fade>让想法，在真实世界发生。</p>
+        <p class="hero-desc" data-hero-fade>我关心 AI 能力如何变成真实可用的产品。用 Claude Code 与 Vibe Coding，把产品判断落成可以打开、体验和检验的作品。</p>
+        <div class="hero-actions" data-hero-fade>
+          <a class="btn btn-dark" href="#work">看看作品 <span class="arrow" aria-hidden="true">↗</span></a>
+          <a class="btn btn-ghost" href="#about">先认识我</a>
+        </div>
       </div>
-      <aside class="identity-card" aria-label="苏虹硕的个人名片">
-        <div class="identity-top"><span>PERSONAL INDEX</span><span>01 — SHS</span></div>
-        <div class="identity-glyph" aria-hidden="true"><span>苏</span><i>✳</i></div>
-        <div class="identity-caption"><p>SU<br>HONGSHUO</p><span>从想法，到作品。</span></div>
-        <dl class="identity-data"><div><dt>身份 / ROLE</dt><dd>AI 产品经理</dd></div><div><dt>公开主页 / FIND ME</dt><dd><a href="https://github.com/suhongshuo6-cell" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></dd></div></dl>
-      </aside>
+
+      <figure class="hero-figure" data-scene>
+        <div class="scene-card">
+          <canvas aria-hidden="true"></canvas>
+          <div class="scene-meta mono" aria-hidden="true"><span>FIG. 01</span><span>IDEA → PRODUCT</span></div>
+          <div class="callouts" aria-hidden="true">
+            <span class="callout"><b>想法<em> / IDEA</em></b><i></i></span>
+            <span class="callout"><b>01<em> / 问题</em></b><i></i></span>
+            <span class="callout"><b>02<em> / 原型</em></b><i></i></span>
+            <span class="callout"><b>03<em> / 产品</em></b><i></i></span>
+          </div>
+          <button class="replay mono" type="button">↻ 再跳一次</button>
+        </div>
+        <figcaption class="mono"><span>一个想法，一级一级跳成产品。</span><span class="hint">悬停台阶 · 点击重播</span></figcaption>
+      </figure>
     </div>
-    <div class="hero-bottom container"><span>PERSONAL STORIES. REAL PROJECTS.</span><a href="#about">从这里认识我 <span aria-hidden="true">↓</span></a></div>
+    <div class="container hero-foot mono" data-hero-fade>
+      <span>产品思维 × AI 实践 × 场景交付 × 商业价值</span>
+      <a href="#about" class="scroll-cue">向下滚动 <span aria-hidden="true">↓</span></a>
+    </div>
   </section>
 
-  <section class="section personal-about" id="about"><div class="container">
-    <div class="section-top"><p class="section-label"><span>✳</span> 01 / ABOUT ME</p><p>THE PERSON BEHIND THE PRODUCT</p></div>
-    <div class="personal-about-grid"><div><p class="personal-kicker">关于我</p><h2>你好，<br>我是<span class="about-serif">苏虹硕。</span></h2></div><div class="personal-bio"><p class="bio-lead">一名 AI 产品经理，<br>用具体的作品，记录自己的探索。</p><p>我把这个网站当作一份持续更新的个人档案：放下做过的项目，留下对产品的思考，也让新的想法有一个生长的地方。</p><p>你可以从下面的公开项目了解我的实践，也可以阅读产品手记，看看我如何思考需求、体验与交付。</p><a class="inline-link" href="#projects">从作品认识我 <span aria-hidden="true">↗</span></a></div></div>
-    <div class="interest-block" id="focus"><div class="interest-heading"><h3>我在关注</h3><span>AREAS OF INTEREST</span></div><div class="interest-grid">
-      <button class="interest-item" data-detail="knowledge"><span>01 / KNOWLEDGE</span><strong>知识如何变得有用</strong><small>知识库 · RAG · 信息体验</small><i aria-hidden="true">↗</i></button>
-      <button class="interest-item" data-detail="agent"><span>02 / AGENT</span><strong>AI 如何完成任务</strong><small>Agent · 工作流 · 工具调用</small><i aria-hidden="true">↗</i></button>
-      <button class="interest-item" data-detail="experience"><span>03 / EXPERIENCE</span><strong>人如何与智能协作</strong><small>交互设计 · 用户体验 · 控制感</small><i aria-hidden="true">↗</i></button>
-    </div></div>
-  </div></section>
-
-  <section class="section projects-section" id="projects"><div class="container">
-    <div class="section-top"><p class="section-label"><span>✳</span> 02 / SELECTED PROJECT</p><p>LESS TALK. SOMETHING YOU CAN SEE.</p></div>
-    <div class="section-heading"><div><p class="personal-kicker">项目实践</p><h2 class="personal-section-title">从一个问题，<br>到一件<span class="about-serif">具体的作品。</span></h2></div><p class="section-description">我的 GitHub 公开项目。<br>从界面、源码和说明，了解产品本身。</p></div>
-    <article class="project-feature">
-      <a class="project-visual" href="https://github.com/suhongshuo6-cell/claude-shield" target="_blank" rel="noopener noreferrer" aria-label="在 GitHub 查看 Claude Shield 项目"><div class="project-preview-top"><span><i></i><i></i><i></i></span><span>CLAUDE SHIELD / INTERFACE</span><span aria-hidden="true">↗</span></div><img src="claude-shield.png" width="1462" height="1349" loading="lazy" decoding="async" alt="Claude Shield 管理页面，展示示例出口验证、连接状态和运行记录；全部为隔离演示数据"></a>
-      <div class="project-overview"><div class="project-status">OPEN-SOURCE EXPERIMENT <span>macOS</span></div><h3>Claude Shield<span>本机连接守护工具</span></h3><p>面向 Claude Desktop 和本地 Claude Code 的连接守护实验。在本机检查出口与配置基线，并通过管理页面展示检查结果和运行状态。</p><dl class="project-details"><div><dt>面对的问题</dt><dd>连接是否经过预期入口、出口与配置是否符合基线，需要有可观察的状态。</dd></div><div><dt>产品中的回应</dt><dd>将检查、状态展示、异常阻断与恢复入口集中在一个本机管理页面。</dd></div><div><dt>公开版本</dt><dd>Swift · MIT 开源代码 · 源码与隔离测试阶段</dd></div></dl><div class="project-actions"><a class="button primary" href="https://suhongshuo6-cell.github.io/claude-shield/" target="_blank" rel="noopener noreferrer">查看项目介绍 <span aria-hidden="true">↗</span></a><a class="inline-link" href="https://github.com/suhongshuo6-cell/claude-shield" target="_blank" rel="noopener noreferrer">查看源码 <span aria-hidden="true">↗</span></a></div></div>
-    </article><p class="project-caption">界面来自公开仓库，使用隔离演示数据，不代表真实网络状态。项目仅保护实际接入的连接，不承诺账号免于封禁。<a href="https://github.com/suhongshuo6-cell/claude-shield#它能做什么" target="_blank" rel="noopener noreferrer">功能与边界 ↗</a></p>
-  </div></section>
-
-  <section class="thinking-section section" id="thinking"><div class="container">
-    <div class="section-top"><p class="section-label"><span>✳</span> 03 / PRODUCT NOTES</p><p>IDEAS IN PROGRESS</p></div>
-    <div class="section-heading"><div><p class="personal-kicker">产品手记</p><h2 class="personal-section-title">作品之外，<br>也留下<span class="about-serif">思考的过程。</span></h2></div><p class="section-description">保持好奇，也保持判断。<br>从问题出发，持续思考。</p></div>
-    <div class="notes-list">
-      <button class="note" data-detail="problem"><span class="note-no">01</span><span class="note-body"><span class="note-category">需求与价值</span><strong>先找到值得解决的问题，再谈 AI 的可能</strong><span>好的起点，是一个足够具体的使用场景。</span></span><span class="note-read">阅读思考 <span aria-hidden="true">↗</span></span></button>
-      <button class="note" data-detail="trust"><span class="note-no">02</span><span class="note-body"><span class="note-category">体验与信任</span><strong>好的 AI 体验，也包括知道何时交还控制权</strong><span>让不确定性被看见，让每一步行动可被理解。</span></span><span class="note-read">阅读思考 <span aria-hidden="true">↗</span></span></button>
-      <button class="note" data-detail="delivery"><span class="note-no">03</span><span class="note-body"><span class="note-category">验证与迭代</span><strong>从一个惊艳的 Demo，到一个可靠的产品</strong><span>关注日常任务中的表现，而不止演示时的高光。</span></span><span class="note-read">阅读思考 <span aria-hidden="true">↗</span></span></button>
+  <!-- 01 ABOUT -->
+  <section class="about arc dark" id="about" data-dark>
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>PROBLEM <i>✳</i> PROTOTYPE <i>✳</i> PRODUCT <i>✳</i> VALUE <i>✳</i> 让想法，在真实世界发生 <i>✳</i></span>
+        <span>PROBLEM <i>✳</i> PROTOTYPE <i>✳</i> PRODUCT <i>✳</i> VALUE <i>✳</i> 让想法，在真实世界发生 <i>✳</i></span>
+      </div>
     </div>
-  </div></section>
+    <div class="container">
+      <div class="sec-label mono"><span>01</span><span class="rule"></span><span>ABOUT / 关于我</span></div>
+      <div class="about-grid">
+        <div class="id-wrap" data-reveal>
+          <article class="id-card" data-tilt aria-label="个人名片">
+            <div class="id-top mono"><span>PERSONAL CARD</span><span>№ 001</span></div>
+            <div class="id-glyph" aria-hidden="true">苏<i></i></div>
+            <div class="id-name"><strong>苏虹硕</strong><span>SU HONGSHUO</span></div>
+            <span class="tag tag-mint">AI PRODUCT MANAGER</span>
+            <div class="id-foot">
+              <span class="barcode" aria-hidden="true"></span>
+              <a class="mono" href="https://github.com/suhongshuo6-cell" target="_blank" rel="noopener noreferrer">github / suhongshuo6-cell ↗</a>
+            </div>
+          </article>
+        </div>
+        <div class="about-copy">
+          <p class="statement" data-fill>你好，我是苏虹硕，一名 AI 产品经理。比起“这个能不能用 AI 做”，我更在意“这件事值不值得做”——需求背后的问题是什么，产品最终如何被使用、被交付，又如何创造价值。我习惯把判断变成可以打开的作品，让想法接受真实体验的检验。</p>
+          <dl class="facts" data-reveal>
+            <div><dt class="mono">ROLE</dt><dd>AI 产品经理</dd></div>
+            <div><dt class="mono">TOOLKIT</dt><dd>Claude · Claude Code</dd></div>
+            <div><dt class="mono">BUILD</dt><dd>Vibe Coding · 原型验证</dd></div>
+            <div><dt class="mono">FOCUS</dt><dd>FDE 场景交付 · 商业化</dd></div>
+            <div class="wide"><dt class="mono">MOTTO</dt><dd><mark>让想法，在真实世界发生。</mark></dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <section class="closing personal-contact container" id="contact"><p class="section-label"><span>✳</span> 04 / FIND ME</p><div class="closing-row"><div><p class="personal-kicker">继续了解我</p><h2>我们在<br><em>GitHub 见。</em></h2></div><a class="round-link" href="https://github.com/suhongshuo6-cell" target="_blank" rel="noopener noreferrer" aria-label="访问苏虹硕的 GitHub 主页">↗</a></div><div class="contact-bottom"><a class="contact-account" href="https://github.com/suhongshuo6-cell" target="_blank" rel="noopener noreferrer">@suhongshuo6-cell <span aria-hidden="true">↗</span></a><p>看看我的公开项目，也欢迎围绕具体项目交流。</p><a class="back-top" href="#home">回到顶部 ↑</a></div></section>
+  <!-- 02 FOCUS -->
+  <section class="focus arc canvas" id="focus">
+    <div class="container">
+      <div class="sec-label mono"><span>02</span><span class="rule"></span><span>FOCUS / 关注方向</span></div>
+      <header class="sec-head">
+        <h2 class="display" data-split>FIVE ANGLES,<br>ONE QUESTION.</h2>
+        <p class="sec-sub" data-reveal>五个方向，指向同一个问题：<br>AI 怎样变成真正有用的产品。</p>
+      </header>
+      <div class="bento">
+        <a class="b-card b-hero" href="#method" data-reveal>
+          <div class="b-top"><span class="tag tag-mint">01 / PRODUCT</span><span class="b-arrow" aria-hidden="true">↗</span></div>
+          <h3 class="display">PRODUCT<br>THINKING</h3>
+          <div class="b-body"><strong>产品经理 · 产品思维</strong><p>用户真正要解决什么？需求的优先级是什么？怎样用原型验证判断？</p></div>
+        </a>
+        <article class="b-card" data-reveal>
+          <div class="b-top"><span class="tag tag-mint">02 / AI WORKFLOW</span><span class="b-arrow" aria-hidden="true">↗</span></div>
+          <h3 class="h2nd">CLAUDE ·<br>CLAUDE CODE</h3>
+          <div class="b-body"><p>如何把 AI 放进产品设计、编码、验证与迭代的工作流程？</p></div>
+        </article>
+        <article class="b-card" data-reveal>
+          <div class="b-top"><span class="tag tag-mint">03 / BUILD</span><span class="b-arrow" aria-hidden="true">↗</span></div>
+          <h3 class="h2nd">VIBE<br>CODING</h3>
+          <div class="b-body"><p>如何缩短从想法到可交互作品的距离，并检查实际体验？</p></div>
+        </article>
+        <article class="b-card" data-reveal>
+          <div class="b-top"><span class="tag tag-mint">04 / DELIVERY</span><span class="b-arrow" aria-hidden="true">↗</span></div>
+          <h3 class="h2nd">FDE ·<br>场景交付</h3>
+          <div class="b-body"><p>如何贴近真实使用场景，让方案成为可运行、可观察的交付？</p></div>
+        </article>
+        <article class="b-card" data-reveal>
+          <div class="b-top"><span class="tag tag-mint">05 / VALUE</span><span class="b-arrow" aria-hidden="true">↗</span></div>
+          <h3 class="h2nd">商业化</h3>
+          <div class="b-body"><p>产品为谁创造价值？价值如何被衡量，如何形成可持续的业务？</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 METHOD -->
+  <section class="method arc white" id="method">
+    <div class="container">
+      <div class="sec-label mono"><span>03</span><span class="rule"></span><span>METHOD / 工作方式</span></div>
+      <header class="sec-head">
+        <h2 class="display" data-split>HOW I<br>WORK.</h2>
+        <p class="sec-sub" data-reveal>三个习惯，<br>让 AI 产品从“能演示”走到“能用”。</p>
+      </header>
+      <div class="method-grid">
+        <div class="method-aside">
+          <div class="method-sticky">
+            <div class="method-num display" aria-hidden="true"><span class="roll"><span>01</span><span>02</span><span>03</span></span></div>
+            <div class="method-bar" aria-hidden="true"><i></i></div>
+            <ol class="method-index mono" aria-hidden="true">
+              <li>PROBLEM</li><li>PROTOTYPE</li><li>VALUE</li>
+            </ol>
+          </div>
+        </div>
+        <ol class="steps">
+          <li class="step" data-step="0">
+            <span class="tag tag-line">STEP 01</span>
+            <h3 class="h2nd">START WITH<br>THE PROBLEM</h3>
+            <p class="step-cn">从问题开始</p>
+            <p>先理解用户与场景，再判断是否需要 AI、需要怎样的产品。把“提升效率”改写成一个能观察的任务：从什么输入开始，经过哪些步骤，什么结果意味着完成。</p>
+            <blockquote>“如果拿掉 AI 这个标签，用户还会需要这个产品吗？”</blockquote>
+          </li>
+          <li class="step" data-step="1">
+            <span class="tag tag-line">STEP 02</span>
+            <h3 class="h2nd">PROVE IT WITH<br>A PROTOTYPE</h3>
+            <p class="step-cn">用作品验证</p>
+            <p>把抽象的想法变成原型与实际交互，让判断接受体验的检验。Claude Code 与 Vibe Coding 让“想到”和“做出来能点开”之间的距离，从几周缩短到一次专注的工作。</p>
+            <blockquote>“讨论十遍方案，不如做一个能打开的版本。”</blockquote>
+          </li>
+          <li class="step" data-step="2">
+            <span class="tag tag-line">STEP 03</span>
+            <h3 class="h2nd">CONNECT DELIVERY<br>TO VALUE</h3>
+            <p class="step-cn">把交付与价值连起来</p>
+            <p>演示说明可能，产品要面对重复使用、复杂输入和失败情况。我同时关注使用体验、落地条件和商业化路径——每次迭代都要回答：用户是否更稳定、更轻松地完成了任务？</p>
+            <blockquote>“好的 AI 体验，也包括知道何时交还控制权。”</blockquote>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 WORK -->
+  <section class="work arc canvas" id="work">
+    <div class="container">
+      <div class="sec-label mono"><span>04</span><span class="rule"></span><span>SELECTED WORK / 作品</span></div>
+      <header class="sec-head">
+        <h2 class="display" data-split>LESS TALK.<br>MORE THINGS.</h2>
+        <p class="sec-sub" data-reveal>少说一点，<br>多做一些看得见的东西。</p>
+      </header>
+
+      <article class="project" data-reveal>
+        <a class="project-shot" href="https://github.com/suhongshuo6-cell/claude-shield" target="_blank" rel="noopener noreferrer" data-cursor="VIEW ↗" aria-label="在 GitHub 查看 Claude Shield">
+          <div class="shot-bar mono"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span>CLAUDE SHIELD / INTERFACE</span><span aria-hidden="true">↗</span></div>
+          <div class="shot-img"><img src="claude-shield.png" width="1462" height="1349" loading="lazy" decoding="async" alt="Claude Shield 管理页面，展示示例出口验证、连接状态和运行记录；全部为隔离演示数据"></div>
+        </a>
+        <div class="project-body">
+          <div class="tags"><span class="tag tag-mint">OPEN-SOURCE EXPERIMENT</span><span class="tag tag-line">macOS · Swift · MIT</span></div>
+          <h3 class="display project-title">CLAUDE<br>SHIELD</h3>
+          <p class="project-sub">本机连接守护工具</p>
+          <p class="project-desc">面向 Claude Desktop 与本地 Claude Code 的连接守护实验。在本机检查出口与配置基线，并通过管理页面展示检查结果和运行状态。</p>
+          <dl class="project-dl">
+            <div><dt class="mono">问题</dt><dd>连接是否经过预期入口、出口与配置是否符合基线，需要一个可观察的状态。</dd></div>
+            <div><dt class="mono">回应</dt><dd>把检查、状态展示、异常阻断与恢复入口集中在一个本机管理页面。</dd></div>
+            <div><dt class="mono">阶段</dt><dd>源码与隔离测试阶段，当前不是通用安装包。</dd></div>
+          </dl>
+          <div class="project-actions">
+            <a class="btn btn-dark" href="https://suhongshuo6-cell.github.io/claude-shield/" target="_blank" rel="noopener noreferrer">项目介绍 <span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="link" href="https://github.com/suhongshuo6-cell/claude-shield" target="_blank" rel="noopener noreferrer">查看源码 ↗</a>
+          </div>
+        </div>
+      </article>
+      <p class="caption mono">* 截图来自公开仓库，使用隔离演示数据，不代表真实网络状态。项目仅保护实际接入的连接，“防封”为项目名称，不代表账号安全保证。<a href="https://github.com/suhongshuo6-cell/claude-shield#它能做什么" target="_blank" rel="noopener noreferrer">功能与边界 ↗</a></p>
+
+      <article class="site-card" data-reveal>
+        <div class="site-copy">
+          <div class="tags"><span class="tag tag-mint">PROJECT 02</span><span class="tag tag-dark">YOU ARE HERE</span></div>
+          <h3 class="display">THIS<br>WEBSITE.</h3>
+          <p>你正在浏览的这个页面，本身也是一件作品。把“我是谁、我怎么做、我做过什么”当成一个产品来设计：信息有先后，动效有目的，细节经得起看。</p>
+          <ul class="spec mono">
+            <li><span>STACK</span>原生 HTML · CSS · JS，无构建依赖</li>
+            <li><span>TYPE</span>Anton / Inter / Noto Sans SC / JetBrains Mono</li>
+            <li><span>MOTION</span>Three.js 互动场景 · 尊重“减少动态效果”设置</li>
+          </ul>
+          <a class="link link-light" href="https://github.com/suhongshuo6-cell/suhongshuo6-cell.github.io" target="_blank" rel="noopener noreferrer">查看源码 ↗</a>
+        </div>
+        <div class="swatches" aria-label="本站色板">
+          <div class="sw" style="--c:#000;--t:#fff"><span class="mono">CARBON</span><b>#000000</b></div>
+          <div class="sw" style="--c:#fff;--t:#000"><span class="mono">PAPER</span><b>#FFFFFF</b></div>
+          <div class="sw" style="--c:#e5e5e5;--t:#000"><span class="mono">CANVAS</span><b>#E5E5E5</b></div>
+          <div class="sw sw-small" style="--c:#d1ffca;--t:#000"><span class="mono">MINT</span><b>#D1FFCA</b></div>
+          <div class="sw sw-small" style="--c:#fff100;--t:#000"><span class="mono">VOLT</span><b>#FFF100</b></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 05 NOTES -->
+  <section class="notes-sec canvas" id="notes">
+    <div class="container">
+      <div class="sec-label mono"><span>05</span><span class="rule"></span><span>FIELD NOTES / 产品手记</span></div>
+      <header class="sec-head">
+        <h2 class="display" data-split>FIELD<br>NOTES.</h2>
+        <p class="sec-sub" data-reveal>作品之外，<br>也留下思考的过程。</p>
+      </header>
+      <div class="notes">
+        <article class="note" data-reveal>
+          <h3><button class="note-head" type="button" aria-expanded="false" aria-controls="note-1">
+            <span class="note-no display">01</span>
+            <span class="note-main"><span class="tag tag-mint">需求与价值</span><span class="note-title">先找到值得解决的问题，再谈 AI 的可能</span><span class="note-sum">好的起点，是一个足够具体的使用场景。</span></span>
+            <span class="note-plus" aria-hidden="true"></span>
+          </button></h3>
+          <div class="note-panel" id="note-1"><div class="note-inner"><div class="note-text">
+            <p>“这个场景可以用 AI”是一个技术判断，还不是充分的产品理由。更具体的起点，是看清谁在什么情境下遇到了什么困难，以及现在如何解决。</p>
+            <h4>让问题足够具体</h4>
+            <p>把“提升效率”改写成一个能够观察的任务：从什么输入开始，需要哪些操作，什么结果意味着完成。只有这样，才能讨论 AI 究竟减少了哪一步负担，又增加了什么成本。</p>
+            <h4>也给简单方案一个机会</h4>
+            <p>如果更清晰的流程、一个筛选器或一份模板已经能解决问题，就值得优先比较。选择 AI 应当来自对问题的理解，而不是来自对技术的偏爱。</p>
+          </div></div></div>
+        </article>
+        <article class="note" data-reveal>
+          <h3><button class="note-head" type="button" aria-expanded="false" aria-controls="note-2">
+            <span class="note-no display">02</span>
+            <span class="note-main"><span class="tag tag-mint">体验与信任</span><span class="note-title">好的 AI 体验，也包括知道何时交还控制权</span><span class="note-sum">让不确定性被看见，让每一步行动可被理解。</span></span>
+            <span class="note-plus" aria-hidden="true"></span>
+          </button></h3>
+          <div class="note-panel" id="note-2"><div class="note-inner"><div class="note-text">
+            <p>自动完成更多事情，并不天然等于更好的体验。当产品代替用户做判断时，也需要让用户知道发生了什么，以及还可以如何参与。</p>
+            <h4>让不确定性可见</h4>
+            <p>资料不完整、条件有歧义、结果缺乏依据，这些都可以成为清晰的产品反馈。坦诚说明边界，并给出可执行的下一步，比一个看似确定的回答更有帮助。</p>
+            <h4>在重要时刻邀请用户参与</h4>
+            <p>对于外部发送、付费或不可恢复的操作，确认应当展示具体对象与影响。对于容易回退的小步骤，则可以减少打断，把注意力留给真正需要判断的地方。</p>
+          </div></div></div>
+        </article>
+        <article class="note" data-reveal>
+          <h3><button class="note-head" type="button" aria-expanded="false" aria-controls="note-3">
+            <span class="note-no display">03</span>
+            <span class="note-main"><span class="tag tag-mint">验证与迭代</span><span class="note-title">从一个惊艳的 Demo，到一个可靠的产品</span><span class="note-sum">关注日常任务中的表现，而不止演示时的高光。</span></span>
+            <span class="note-plus" aria-hidden="true"></span>
+          </button></h3>
+          <div class="note-panel" id="note-3"><div class="note-inner"><div class="note-text">
+            <p>演示可以说明一种可能，而产品需要面对重复使用、复杂输入和失败情况。把这两者连接起来，靠的是持续验证。</p>
+            <h4>从真实任务建立评估</h4>
+            <p>用具有代表性的任务观察完成情况，记录失败发生在哪一步。评估结果质量的同时，也关注等待时间、使用成本，以及用户需要额外做多少检查。</p>
+            <h4>把失败也纳入设计</h4>
+            <p>网络中断、信息缺失和工具不可用，都不应该只剩一句“出错了”。保存进度、解释原因、提供重试或替代路径，能让产品在不理想的条件下仍然可用。</p>
+          </div></div></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 NOW -->
+  <section class="now canvas" id="now">
+    <div class="container">
+      <div class="sec-label mono"><span>06</span><span class="rule"></span><span>NOW / 此刻 — 更新于 2026.11</span></div>
+      <header class="sec-head">
+        <h2 class="display" data-split>RIGHT<br>NOW.</h2>
+        <p class="sec-sub" data-reveal>这一页会过期，<br>所以我会持续更新它。</p>
+      </header>
+      <div class="now-grid">
+        <article class="now-card" data-reveal>
+          <p class="now-state mono"><i class="pulse"></i>BUILDING</p>
+          <h3>个人网站 v2</h3>
+          <p>就是你眼前这一版。用一套黑白灰和一抹薄荷绿，重新组织“我是谁、我怎么做、我做过什么”。</p>
+        </article>
+        <article class="now-card" data-reveal>
+          <p class="now-state mono"><i class="pulse"></i>ITERATING</p>
+          <h3>Claude Shield</h3>
+          <p>macOS 本机连接守护实验，处在源码与隔离测试阶段，继续打磨检查、状态展示与恢复路径。</p>
+        </article>
+        <article class="now-card now-dark" data-reveal>
+          <p class="now-state mono"><i class="pulse"></i>EXPLORING</p>
+          <h3>三个还没想完的问题</h3>
+          <ol class="questions">
+            <li><span class="mono">KNOWLEDGE</span>知识如何变得有用</li>
+            <li><span class="mono">AGENT</span>AI 如何完成任务</li>
+            <li><span class="mono">EXPERIENCE</span>人如何与智能协作</li>
+          </ol>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 CONTACT -->
+  <section class="contact arc dark" id="contact" data-dark>
+    <div class="container">
+      <div class="sec-label mono"><span>07</span><span class="rule"></span><span>CONTACT / 联系</span></div>
+      <h2 class="display contact-title" data-split>LET'S MAKE<br>IDEAS <span class="volt-text">REAL.</span></h2>
+      <div class="contact-grid">
+        <div class="contact-main" data-reveal>
+          <p class="contact-lead">如果你在做 AI 产品，或者手上有一个想法，想把它变成可以打开的东西——欢迎来找我聊聊。</p>
+          <a class="contact-link" href="https://github.com/suhongshuo6-cell" target="_blank" rel="noopener noreferrer"><span class="mono">GITHUB</span><mark>@suhongshuo6-cell</mark><span class="arrow" aria-hidden="true">↗</span></a>
+        </div>
+        <div class="contact-topics" data-reveal>
+          <p class="mono">可以和我聊</p>
+          <ul>
+            <li>AI 产品的需求判断与优先级</li>
+            <li>Agent / 知识库的场景落地</li>
+            <li>Claude Code 工作流</li>
+            <li>Vibe Coding 与原型验证</li>
+            <li>场景交付与商业化</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <svg class="wordmark" viewBox="0 0 1000 150" aria-hidden="true"><text x="0" y="146" textLength="1000" lengthAdjust="spacingAndGlyphs">SU HONGSHUO</text></svg>
+      <div class="container foot-row mono">
+        <span>© <span id="year">2026</span> 苏虹硕 SU HONGSHUO</span>
+        <span>DESIGNED &amp; BUILT WITH CARE — 与 CLAUDE CODE 一起</span>
+        <a href="#top">回到顶部 ↑</a>
+      </div>
+    </footer>
+  </section>
 </main>
-<footer class="footer container"><a class="footer-brand" href="#home">苏虹硕 <span> / AI PRODUCT MANAGER</span></a><span>© <span id="year">2026</span> SU HONGSHUO</span><span>THOUGHTFULLY, ALWAYS. <span aria-hidden="true">✳</span></span></footer>
-<dialog id="detail-dialog" aria-labelledby="dialog-title"><div class="dialog-header"><span id="dialog-label"></span><button class="dialog-close" aria-label="关闭详情">×</button></div><h2 id="dialog-title"></h2><div id="dialog-body"></div><div class="dialog-footer">苏虹硕 <span>· AI 产品思考</span></div></dialog>
+
+<div class="cursor-tag mono" aria-hidden="true"></div>
 </body>
 </html>
